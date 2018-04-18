@@ -1,9 +1,7 @@
-// Npm dependecies
+// Require dependecies
 var express = require("express");
 var bodyParser = require("body-parser");
 var mongoose = require("mongoose");
-
-// Set Handlebars
 var exphbs = require("express-handlebars");
 
 // Parses markup & used as a scraping tool
@@ -74,8 +72,8 @@ app.set('view engine', 'handlebars');
 // Import routes and give the server access to them
 var routes = require("./controllers/controller.js");
 
-// ****THIS IS WHERE THE ERROR Message comes from!!!
-app.use(routes);
+// ****THIS IS WHERE THE ERROR Message WAS coming from!!!
+app.use("/", routes);
 //*****End of New**** */
 
 
