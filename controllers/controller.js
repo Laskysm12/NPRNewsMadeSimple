@@ -3,6 +3,7 @@ var request = require("request");
 var mongoose = require("mongoose");
 var cheerio = require("cheerio");
 var express = require("express");
+var axios = require("axios");
 
 var router = express.Router();
 
@@ -21,7 +22,7 @@ var url = "https://www.npr.org/sections/news/";
 // A GET route for scraping the echoJS website
 router.get("/scrape", function(req, res) {
     // First, we grab the body of the html with request
-    request(url, function(error, response, html) {
+    axios.get(url).then(function(response) {
       // Then, we load that into cheerio and save it to $ for a shorthand selector
       var $ = cheerio.load(response.data);
   
