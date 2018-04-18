@@ -10,12 +10,15 @@ var cheerio = require("cheerio");
 // Makes HTTP request for HTML page
 var request = require("request");
 
+// Require all models
+var db = require("./models");
+
 // Sets port for Heroku deployment
 var PORT = process.env.PORT || 3000
 
 // Tells the console what server.js is doing
 console.log("\n*************************\n" + 
-            "Grabbing the title, brief summary, and link\n" +
+            "Grabbing the title, a brief summary, and link\n" +
             "of the top articles from NPR's website:" +
             "\n*************************\n");
 
@@ -59,8 +62,11 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.text());
 app.use(bodyParser.json({type: 'application/vnd.api+json'}));
 
-var router = require('./controllers/controller.js');
-app.use('/', router)
+// var router = require('./controllers/controller.js');
+// // app.use('/', router)
+// app.use(app.router);
+// routes.intialize(app);
+
 
 // Start the server
 app.listen(PORT, function() {
