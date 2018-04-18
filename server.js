@@ -70,6 +70,7 @@ app.use(bodyParser.json({type: 'application/vnd.api+json'}));
 
 // Start the server
 app.listen(PORT, function() {
-    console.log("App running on port " + PORT + "!");
+    // Log (server-side) when our server has started
+    console.log("Server listening on: http://localhost:" + PORT);
   });
   
