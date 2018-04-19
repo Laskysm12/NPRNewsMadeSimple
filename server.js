@@ -48,6 +48,7 @@ var app = express();
 // Serve static content for the app from the "public" directory in the app directory
 app.use(express.static("public"));
 
+// app.use('/static', express.static(path.join(__dirname, 'public')))
 // ************************************************
 // FROM HERE ON NEED TO FIGURE OUT WHAT IS GOING ON
 // ************************************************
