@@ -1,33 +1,12 @@
 <script src="../public/app.js"></script>
 
 <div class="jumbotron">
-    <h1>Welcome to NPR News Made Simple!</h1>
+    {{!-- <h1>Welcome to NPR News Made Simple!</h1> --}}
 </div>
 
 <div id="wrapper">
-    <h2>Check out the latest news from NPR!</h2>
+    <h1>Check out the latest news from NPR!</h1>
+    <h4>Click on an article to leave a note!</h4>
     <div id="articles"></div>
     <div id="notes"></div>
 </div>
-
-
-{{!-- THIS NEEDS TO BE CHANGED - TAKEN FROM LUIS --}}
-
-{{#each data}}
-	<div class = 'row'>
-		<div class = 'col-lg-12'>
-			<div class = 'panel panel-primary'>
-			<div class="panel-heading">
-				<h3 class="panel-title">{{this.title}}</h3>
-			</div>
-				<div class = 'panel-body'>
-				<p> This is some Article title: {{this.title}}</p>
-				<p> This is the link: <a href = {{this.link}}>{{this.link}}</a></p>
-			{{#each note}}
-				<p data-id = {{this.id}}>{{this.title}}</p>
-			{{/each}}
-				</div>
-			</div>
-		</div>
-	</div>
-	{{/each}}
